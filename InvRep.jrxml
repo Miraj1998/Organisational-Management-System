@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="InvRep" language="groovy" pageWidth="700" pageHeight="842" columnWidth="660" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="44e4d192-0f83-46a8-9703-f5240fffec31">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT
+      invrep.`invno` AS invrep_invno,
+     invrep.`partyname` AS invrep_partyname,
+     invrep.`address1` AS invrep_address1,
+     invrep.`email` AS invrep_email,
+     invrep.`phone` AS invrep_phone,
+     invrep.`productDesc` AS invrep_productDesc,
+     invrep.`specs` AS invrep_specs,
+     invrep.`price` AS invrep_price,
+     invrep.`units` AS invrep_units,
+     invrep.`gst` AS invrep_gst,
+     invrep.`amount` AS invrep_amount,
+     invrep.`amountRecd` AS invrep_amountRecd,
+     invrep.`doi` AS invrep_doi,
+     invrep.`voucherno` AS invrep_voucherno
+FROM
+     `invrep` invrep]]>
+	</queryString>
+	<field name="invrep_invno" class="java.lang.Integer"/>
+	<field name="invrep_partyname" class="java.lang.String"/>
+	<field name="invrep_address1" class="java.lang.String"/>
+	<field name="invrep_email" class="java.lang.String"/>
+	<field name="invrep_phone" class="java.lang.String"/>
+	<field name="invrep_doi" class="java.sql.Date"/>
+	<field name="invrep_voucherno" class="java.lang.String"/>
+	<group name="invrep_invno">
+		<groupExpression><![CDATA[$F{invrep_invno}]]></groupExpression>
+	</group>
+	<group name="invrep_partyname">
+		<groupExpression><![CDATA[$F{invrep_partyname}]]></groupExpression>
+	</group>
+	<group name="invrep_address1">
+		<groupExpression><![CDATA[$F{invrep_address1}]]></groupExpression>
+	</group>
+	<group name="invrep_doi">
+		<groupExpression><![CDATA[$F{invrep_doi}]]></groupExpression>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="129" y="0" width="301" height="51" uuid="e37d0a23-d483-4a03-bb89-64bf7369f53a"/>
+				<textElement textAlignment="Center">
+					<font size="40"/>
+				</textElement>
+				<text><![CDATA[Green Invoice]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="61" splitType="Stretch">
+			<textField>
+				<reportElement x="55" y="0" width="100" height="20" uuid="998e1dbd-46d0-43b1-ba94-713e8f18665a"/>
+				<textFieldExpression><![CDATA[$F{invrep_invno}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="0" width="55" height="20" uuid="8afb3c5b-5bb3-4be0-b4b1-99a3dc15becf"/>
+				<text><![CDATA[Invoice No:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="455" y="0" width="100" height="20" uuid="2defa5b8-253c-4182-a23e-279992c91278"/>
+				<textFieldExpression><![CDATA[$F{invrep_doi}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="374" y="0" width="81" height="20" uuid="8f4fafe5-2204-4e76-8d5d-da4fc7f46056"/>
+				<text><![CDATA[Date of Invoice:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="20" width="73" height="20" uuid="e862c5f8-822c-4dda-b8cb-2ea32fb67cc5"/>
+				<text><![CDATA[Buyer's Name:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="73" y="20" width="139" height="20" uuid="f19ba4db-7d24-42f7-aa95-d5b380dfad0b"/>
+				<textFieldExpression><![CDATA[$F{invrep_partyname}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="455" y="20" width="100" height="20" uuid="e990cead-50e7-4fb6-b509-f8d930c9c702"/>
+				<textFieldExpression><![CDATA[$F{invrep_email}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="73" y="40" width="100" height="20" uuid="17e498b1-6249-4f62-b625-965f04712c61"/>
+				<textFieldExpression><![CDATA[$F{invrep_address1}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="455" y="40" width="100" height="20" uuid="1ffe7ef6-c1b2-47a2-9431-9be280c2a688"/>
+				<textFieldExpression><![CDATA[$F{invrep_phone}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="40" width="73" height="20" uuid="1c9a41b4-5b6e-4a02-b9dc-a2218cd81f32"/>
+				<text><![CDATA[City:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="374" y="20" width="81" height="20" uuid="879ee3fa-f4d8-4786-bfb2-a3a92fb6ed8d"/>
+				<text><![CDATA[Buyer's Email:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="374" y="40" width="81" height="20" uuid="5e997923-90b2-4f2b-ac01-8e973a9f9ca1"/>
+				<text><![CDATA[Buyer's Phone:]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="40" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="14" width="73" height="20" uuid="b4ccc3c9-6bf4-453b-8572-6235fa4eac62"/>
+				<text><![CDATA[Voucher No:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="85" y="14" width="100" height="20" uuid="a1913db7-bf67-4ba3-99ea-bd54f7142fc5"/>
+				<text><![CDATA[Product]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="198" y="14" width="100" height="20" uuid="b2ece8ab-975d-4cf0-bc8c-ff5005a20566"/>
+				<text><![CDATA[Other Details]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="311" y="14" width="63" height="20" uuid="b4b4bbe4-0d67-44ec-9699-3c3feac20f61"/>
+				<text><![CDATA[Price (INR)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="374" y="14" width="56" height="20" uuid="3e966540-699c-4da5-9d0a-fc45109d254b"/>
+				<text><![CDATA[GST]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="430" y="14" width="77" height="20" uuid="5520a5b7-358b-415d-aefa-e85fd85b3267"/>
+				<text><![CDATA[Amount (INR)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="507" y="14" width="100" height="20" uuid="0265cd14-c81a-43c0-ac3d-d53c9676b1fd"/>
+				<text><![CDATA[Received (INR)]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="29" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="129" height="20" uuid="d5a8e63f-24d0-49d5-8be9-956497f9348b"/>
+				<textFieldExpression><![CDATA[$F{invrep_voucherno)]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

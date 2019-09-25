@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 19 Feb, 2019 9:57:46 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="greenInvoice.maps.Glassware" table="glassware" catalog="invinv" optimistic-lock="version">
+        <id name="productId" type="int">
+            <column name="ProductID" />
+            <generator class="assigned" />
+        </id>
+        <property name="catNo" type="int">
+            <column name="CatNo" not-null="true" />
+        </property>
+        <property name="subCat" type="string">
+            <column name="SubCat" />
+        </property>
+        <property name="descGoods" type="string">
+            <column name="DescGoods" length="500" />
+        </property>
+        <property name="make" type="string">
+            <column name="Make" length="50" />
+        </property>
+        <property name="price" type="java.lang.Double">
+            <column name="Price" precision="22" scale="2" />
+        </property>
+        <property name="gst" type="float">
+            <column name="gst" precision="10" scale="2"/>
+        </property>
+        <set name="vouchers" table="voucher" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="productid" not-null="true" />
+            </key>
+            <one-to-many class="greenInvoice.maps.Voucher" />
+        </set>
+    </class>
+</hibernate-mapping>

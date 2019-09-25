@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 19 Feb, 2019 9:57:46 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="greenInvoice.maps.Chemicals" table="chemicals" catalog="invinv" optimistic-lock="version">
+        <id name="productcode" type="java.lang.Integer">
+            <column name="productcode" />
+            <generator class="identity" />
+        </id>
+        <property name="productdesc" type="string">
+            <column name="productdesc" length="300" />
+        </property>
+        <property name="specification" type="string">
+            <column name="specification" length="1000" />
+        </property>
+        <property name="packsize" type="string">
+            <column name="packsize" length="100" />
+        </property>
+        <property name="price" type="java.lang.Double">
+            <column name="price" precision="22" scale="0" />
+        </property>
+        <property name="gst" type="java.lang.Float">
+            <column name="gst" precision="12" scale="0" />
+        </property>
+    </class>
+</hibernate-mapping>

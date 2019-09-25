@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 19 Feb, 2019 9:57:46 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="greenInvoice.maps.Stock" table="stock" catalog="invinv" optimistic-lock="version">
+        <id name="stckid" type="java.lang.Integer">
+            <column name="stckid" />
+            <generator class="identity" />
+        </id>
+        <property name="productId" type="java.lang.Integer">
+            <column name="productId" />
+        </property>
+        <property name="tp" type="string">
+            <column name="tp" length="100" />
+        </property>
+        <property name="units" type="java.lang.Integer">
+            <column name="units" />
+        </property>
+    </class>
+</hibernate-mapping>

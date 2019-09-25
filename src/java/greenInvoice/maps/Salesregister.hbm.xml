@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 19 Feb, 2019 9:57:46 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="greenInvoice.maps.Salesregister" table="salesregister" catalog="invinv" optimistic-lock="version">
+        <id name="salesRegisterId" type="java.lang.Integer">
+            <column name="salesRegisterID" />
+            <generator class="identity" />
+        </id>
+        <property name="dos" type="timestamp">
+            <column name="DOS" length="19" />
+        </property>
+        <property name="buyer" type="string">
+            <column name="Buyer" length="45" />
+        </property>
+        <property name="voucherNo" type="string">
+            <column name="VoucherNo" length="12" />
+        </property>
+        <property name="amount" type="java.lang.Double">
+            <column name="Amount" precision="22" scale="0" />
+        </property>
+    </class>
+</hibernate-mapping>

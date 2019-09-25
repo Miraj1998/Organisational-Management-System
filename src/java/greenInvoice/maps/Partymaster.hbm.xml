@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 19 Feb, 2019 9:57:46 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="greenInvoice.maps.Partymaster" table="partymaster" catalog="invinv" optimistic-lock="version">
+        <id name="partyno" type="string">
+            <column name="partyno" length="12" />
+            <generator class="assigned" />
+        </id>
+        <property name="partyname" type="string">
+            <column name="partyname" length="100" />
+        </property>
+        <property name="address1" type="string">
+            <column name="address1" length="200" />
+        </property>
+        <property name="address2" type="string">
+            <column name="address2" length="200" />
+        </property>
+        <property name="city" type="string">
+            <column name="city" length="200" />
+        </property>
+        <property name="pincode" type="java.lang.Integer">
+            <column name="pincode" />
+        </property>
+        <property name="email" type="string">
+            <column name="email" length="100" />
+        </property>
+        <property name="phone" type="string">
+            <column name="phone" length="45" />
+        </property>
+        <set name="vouchers" table="voucher" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="partyno" length="12" not-null="true" />
+            </key>
+            <one-to-many class="greenInvoice.maps.Voucher" />
+        </set>
+    </class>
+</hibernate-mapping>

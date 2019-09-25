@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 19 Feb, 2019 9:57:46 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="greenInvoice.maps.Accounts" table="accounts" catalog="invinv" optimistic-lock="version">
+        <id name="accountid" type="int">
+            <column name="accountid" />
+            <generator class="assigned" />
+        </id>
+        <property name="customerid" type="java.lang.Integer">
+            <column name="customerid" />
+        </property>
+        <property name="accountopendate" type="date">
+            <column name="accountopendate" length="10" />
+        </property>
+        <property name="accountname" type="string">
+            <column name="accountname" length="45" />
+        </property>
+        <property name="otheraccountdetail" type="string">
+            <column name="otheraccountdetail" length="1000" />
+        </property>
+        <property name="payable" type="java.lang.Double">
+            <column name="payable" precision="10" />
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 19 Feb, 2019 9:57:46 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="greenInvoice.maps.Usermaster" table="usermaster" catalog="invinv" optimistic-lock="version">
+        <id name="email" type="string">
+            <column name="email" length="100" />
+            <generator class="assigned" />
+        </id>
+        <property name="name" type="string">
+            <column name="name" length="100" />
+        </property>
+        <property name="designation" type="string">
+            <column name="designation" length="100" />
+        </property>
+        <property name="status" type="string">
+            <column name="status" length="45" />
+        </property>
+        <one-to-one name="login" class="greenInvoice.maps.Login"></one-to-one>
+    </class>
+</hibernate-mapping>

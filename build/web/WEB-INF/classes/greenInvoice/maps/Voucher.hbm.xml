@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 19 Feb, 2019 9:57:46 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="greenInvoice.maps.Voucher" table="voucher" catalog="invinv" optimistic-lock="version">
+        <composite-id name="id" class="greenInvoice.maps.VoucherId">
+            <key-property name="voucherno" type="string">
+                <column name="voucherno" length="12" />
+            </key-property>
+            <key-property name="partyno" type="string">
+                <column name="partyno" length="12" />
+            </key-property>
+            <key-property name="dos" type="date">
+                <column name="dos" length="10" />
+            </key-property>
+            <key-property name="productid" type="int">
+                <column name="productid" />
+            </key-property>
+        </composite-id>
+        <many-to-one name="glassware" class="greenInvoice.maps.Glassware" update="false" insert="false" fetch="select">
+            <column name="productid" not-null="true" />
+        </many-to-one>
+        <many-to-one name="instruments" class="greenInvoice.maps.Instruments" update="false" insert="false" fetch="select">
+            <column name="productid" not-null="true" />
+        </many-to-one>
+        <many-to-one name="partymaster" class="greenInvoice.maps.Partymaster" update="false" insert="false" fetch="select">
+            <column name="partyno" length="12" not-null="true" />
+        </many-to-one>
+        <property name="qty" type="java.lang.Integer">
+            <column name="qty" />
+        </property>
+        <property name="price" type="java.lang.Double">
+            <column name="price" precision="22" scale="0" />
+        </property>
+        <property name="producttp" type="string">
+            <column name="producttp" length="100" />
+        </property>
+    </class>
+</hibernate-mapping>

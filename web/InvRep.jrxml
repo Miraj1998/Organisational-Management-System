@@ -1,0 +1,282 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="950" pageHeight="842" columnWidth="910" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="70b7ec9b-ff90-40bf-ab75-1aec188b16d6">
+	<property name="ireport.zoom" value="1.464100000000002"/>
+	<property name="ireport.x" value="35"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="InvoiceNo" class="java.lang.Integer">
+		<defaultValueExpression><![CDATA[1]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[SELECT
+     invrep.`invno` AS invrep_invno,
+     invrep.`partyname` AS invrep_partyname,
+     invrep.`address1` AS invrep_address1,
+     invrep.`email` AS invrep_email,
+     invrep.`phone` AS invrep_phone,
+     invrep.`productDesc` AS invrep_productDesc,
+     invrep.`specs` AS invrep_specs,
+     invrep.`price` AS invrep_price,
+     invrep.`units` AS invrep_units,
+     invrep.`gst` AS invrep_gst,
+     invrep.`amount` AS invrep_amount,
+     invrep.`amountRecd` AS invrep_amountRecd,
+     invrep.`doi` AS invrep_doi,
+     invrep.`voucherno` AS invrep_voucherno
+FROM
+     `invrep` invrep
+WHERE
+     invno = $P!{InvoiceNo}]]>
+	</queryString>
+	<field name="invrep_invno" class="java.lang.Integer"/>
+	<field name="invrep_partyname" class="java.lang.String"/>
+	<field name="invrep_address1" class="java.lang.String"/>
+	<field name="invrep_email" class="java.lang.String"/>
+	<field name="invrep_phone" class="java.lang.String"/>
+	<field name="invrep_productDesc" class="java.lang.String"/>
+	<field name="invrep_specs" class="java.lang.String"/>
+	<field name="invrep_price" class="java.lang.Double"/>
+	<field name="invrep_units" class="java.lang.Integer"/>
+	<field name="invrep_gst" class="java.lang.Float"/>
+	<field name="invrep_amount" class="java.lang.Double"/>
+	<field name="invrep_amountRecd" class="java.lang.Double"/>
+	<field name="invrep_doi" class="java.sql.Date"/>
+	<field name="invrep_voucherno" class="java.lang.String"/>
+	<variable name="smAmt" class="java.lang.Number" calculation="Sum">
+		<variableExpression><![CDATA[$F{invrep_amount}]]></variableExpression>
+	</variable>
+	<group name="invrep_invno">
+		<groupExpression><![CDATA[$F{invrep_invno}]]></groupExpression>
+	</group>
+	<group name="invrep_partyname">
+		<groupExpression><![CDATA[$F{invrep_partyname}]]></groupExpression>
+	</group>
+	<group name="invrep_doi">
+		<groupExpression><![CDATA[$F{invrep_doi}]]></groupExpression>
+	</group>
+	<group name="invrep_email">
+		<groupExpression><![CDATA[$F{invrep_email}]]></groupExpression>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="107" splitType="Stretch">
+			<rectangle>
+				<reportElement x="0" y="0" width="910" height="79" forecolor="#99B4D1" backcolor="#2C2533" uuid="e04e1e58-2805-4934-95a7-85a24867fb95"/>
+			</rectangle>
+			<staticText>
+				<reportElement stretchType="RelativeToBandHeight" x="112" y="6" width="357" height="66" forecolor="#00CC00" uuid="02592cb4-425f-4ec1-83fe-a8afed3c2445"/>
+				<textElement>
+					<font fontName="Calibri" size="50" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Green Invoice]]></text>
+			</staticText>
+			<image>
+				<reportElement x="38" y="6" width="72" height="66" uuid="bc829e7e-7481-4248-838a-475a288ac94e"/>
+				<imageExpression><![CDATA["C:\\Users\\DELL\\Desktop\\full n final\\GreenInvoice\\web\\images\\logo1.png"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="95" splitType="Stretch">
+			<textField>
+				<reportElement x="112" y="12" width="100" height="20" uuid="63def790-4089-4948-9e39-2835edd9b585"/>
+				<box>
+					<pen lineWidth="0.0"/>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textFieldExpression><![CDATA[$F{invrep_invno}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="112" y="32" width="100" height="20" uuid="a7a2f1ea-0f51-406a-8978-14267eae81bd"/>
+				<box>
+					<pen lineWidth="0.0"/>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textFieldExpression><![CDATA[$F{invrep_partyname}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="112" y="52" width="100" height="20" uuid="e067c0f7-d646-4e5a-b15b-cb14f7e31d28"/>
+				<box>
+					<pen lineWidth="0.0"/>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textFieldExpression><![CDATA[$F{invrep_address1}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="781" y="12" width="100" height="20" uuid="90138ee6-ce20-4a16-9553-65babbd10046"/>
+				<box>
+					<pen lineWidth="0.0"/>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textFieldExpression><![CDATA[$F{invrep_email}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="781" y="32" width="100" height="20" uuid="b10000c1-afb6-4732-a7b6-127b97497131"/>
+				<box>
+					<pen lineWidth="0.0"/>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textFieldExpression><![CDATA[$F{invrep_phone}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="781" y="52" width="100" height="20" uuid="bbe237e3-3eab-4d4d-aadf-cebb0c2ef799"/>
+				<box>
+					<pen lineWidth="0.0"/>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textFieldExpression><![CDATA[$F{invrep_doi}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="0" y="5" width="910" height="1" uuid="98e5650e-1f13-4733-b91f-40c08717234e"/>
+				<graphicElement>
+					<pen lineWidth="3.0"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="0" y="79" width="910" height="1" uuid="c00542e3-5399-416c-96eb-398d94595f66"/>
+				<graphicElement>
+					<pen lineWidth="3.0"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement x="10" y="12" width="100" height="20" uuid="cb12ec94-62e0-4deb-9635-45da35066d69"/>
+				<text><![CDATA[Invoice No.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="10" y="31" width="100" height="20" uuid="ab95d029-d972-44af-a8d1-63b72748cd8d"/>
+				<text><![CDATA[Buyer]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="10" y="51" width="100" height="20" uuid="2c9f673e-4cae-4085-9dcb-f9ca23d64bc7"/>
+				<text><![CDATA[Address]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="681" y="12" width="100" height="20" uuid="a100007d-5034-4311-9fb7-83b24ffdb459"/>
+				<text><![CDATA[Email]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="681" y="51" width="100" height="20" uuid="2e2d17a1-edc5-4e49-a831-feee456292ad"/>
+				<text><![CDATA[Dated]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="681" y="32" width="100" height="20" uuid="a50b70b2-889f-44f5-90f1-398945120b20"/>
+				<text><![CDATA[Contact No.]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="27" splitType="Stretch">
+			<rectangle>
+				<reportElement x="0" y="0" width="910" height="20" forecolor="#000066" backcolor="#000066" uuid="ef3be94d-dc89-403f-bb4a-c87d5860a54e"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="71" y="0" width="100" height="20" forecolor="#FFFFFF" uuid="007e6da2-63e2-409e-9959-9a1d387178f5"/>
+				<text><![CDATA[Product Description]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="191" y="0" width="100" height="20" forecolor="#FFFFFF" uuid="89aecce5-ab3d-4205-9978-59f582bb9026"/>
+				<text><![CDATA[Specifications]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="316" y="0" width="100" height="20" forecolor="#FFFFFF" uuid="fb9d0420-b4ad-4512-b644-2fbd81c503ce"/>
+				<text><![CDATA[Price]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="442" y="0" width="100" height="20" forecolor="#FFFFFF" uuid="1428b67b-f106-4bee-aec5-547b4b81574e"/>
+				<text><![CDATA[Units]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="565" y="0" width="100" height="20" forecolor="#FFFFFF" uuid="a453b8b5-b8a5-41d6-99ab-0ec087abf2cc"/>
+				<text><![CDATA[GST]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="686" y="0" width="100" height="20" forecolor="#FFFFFF" uuid="acf0e143-6284-4dad-9246-757f0317d7bc"/>
+				<text><![CDATA[Amount]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="804" y="0" width="100" height="20" forecolor="#FFFFFF" uuid="0df548c9-a48c-4db3-b235-8b4674c0b4c3"/>
+				<text><![CDATA[Amount Received]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="10" y="0" width="39" height="20" forecolor="#FFFFFF" uuid="bf525b37-479b-45aa-8651-3540e1ca478c"/>
+				<text><![CDATA[Sr. No.]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="20" splitType="Stretch">
+			<textField>
+				<reportElement x="70" y="0" width="100" height="20" uuid="8c63e236-c977-45bb-a342-d5c7285f4019"/>
+				<textFieldExpression><![CDATA[$F{invrep_productDesc}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="191" y="0" width="100" height="20" uuid="33e9f4fd-6d59-44dd-a805-7b46d1b55c44"/>
+				<textFieldExpression><![CDATA[$F{invrep_specs}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="316" y="0" width="100" height="20" uuid="c2163fe0-4aa6-40c2-8060-22e080a460ae"/>
+				<textFieldExpression><![CDATA[$F{invrep_price}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="442" y="0" width="100" height="20" uuid="479f539c-eef3-4775-8ba1-974204c06eee"/>
+				<textFieldExpression><![CDATA[$F{invrep_units}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="565" y="0" width="100" height="20" uuid="378a2bf2-b491-4c8c-b224-ab1939e46155"/>
+				<textFieldExpression><![CDATA[$F{invrep_gst}]]></textFieldExpression>
+			</textField>
+			<textField pattern="###0.00;-###0.00">
+				<reportElement x="686" y="0" width="100" height="20" uuid="c85c9610-64be-4fd4-bc76-e22c6f880759"/>
+				<textFieldExpression><![CDATA[$F{invrep_amount}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="804" y="0" width="100" height="20" uuid="1cfd17ef-afeb-44ef-b342-f5b9cab892c4"/>
+				<textFieldExpression><![CDATA[$F{invrep_amountRecd}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="11" y="0" width="38" height="20" uuid="f8a4deee-8543-4482-bc0d-261ea58a062c"/>
+				<textFieldExpression><![CDATA[$V{REPORT_COUNT}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="50"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch">
+			<rectangle>
+				<reportElement x="0" y="0" width="910" height="54" backcolor="#003333" uuid="76993095-57c2-414c-9451-c6433152da59"/>
+			</rectangle>
+			<textField>
+				<reportElement x="781" y="10" width="100" height="20" forecolor="#FFFFFF" uuid="bc65b9f6-86c2-48f7-891b-968eee279ec1"/>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="7" y="5" width="216" height="35" forecolor="#FFFFFF" uuid="0cd175f2-1ecd-42cd-a828-b76449546a76"/>
+				<text><![CDATA[We declare that this invoice contains the actual prices of the goods described]]></text>
+			</staticText>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

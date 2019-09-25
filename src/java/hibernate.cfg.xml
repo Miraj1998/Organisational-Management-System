@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+  <session-factory>
+    <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+    <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+    <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/invinv?zeroDateTimeBehavior=convertToNull</property>
+    <property name="hibernate.connection.username">root</property>
+    <property name="hibernate.connection.password">root</property>
+    <mapping resource="greenInvoice/maps/Login.hbm.xml"/>
+    <mapping resource="greenInvoice/maps/Instruments.hbm.xml"/>
+    <mapping resource="greenInvoice/maps/Salesregister.hbm.xml"/>
+    <mapping resource="greenInvoice/maps/Partymaster.hbm.xml"/>
+    <mapping resource="greenInvoice/maps/Voucher.hbm.xml"/>
+    <mapping resource="greenInvoice/maps/Chemicals.hbm.xml"/>
+    <mapping resource="greenInvoice/maps/Usermaster.hbm.xml"/>
+    <mapping resource="greenInvoice/maps/Accounts.hbm.xml"/>
+    <mapping resource="greenInvoice/maps/Glassware.hbm.xml"/>
+    <mapping resource="greenInvoice/maps/Invoice.hbm.xml"/>
+    <mapping resource="greenInvoice/maps/Stock.hbm.xml"/>
+  </session-factory>
+</hibernate-configuration>

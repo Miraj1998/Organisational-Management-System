@@ -1,0 +1,8 @@
+1. Create a database named 'invinv' 
+2. In the Controller.java file, and in DataMan.java files, change MySQL user and password as per your credentials.
+3. Restore invinv.sql file in your MySQL
+4. Open the project with NetBeans
+5. Run the project, and do not change the password on 'Login' page. Passwords for both users is 'password'.
+6. Click on 'Chemicals' link, to open 'Chemical' page.
+7. It will have a datagrid with edit options.
+8. You can add and update any record.

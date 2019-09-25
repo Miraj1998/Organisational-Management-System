@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 19 Feb, 2019 9:57:46 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="greenInvoice.maps.Login" table="login" catalog="invinv" optimistic-lock="version">
+        <id name="email" type="string">
+            <column name="email" length="100" />
+            <generator class="foreign">
+                <param name="property">usermaster</param>
+            </generator>
+        </id>
+        <one-to-one name="usermaster" class="greenInvoice.maps.Usermaster" constrained="true"></one-to-one>
+        <property name="pwd" type="string">
+            <column name="pwd" length="100" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

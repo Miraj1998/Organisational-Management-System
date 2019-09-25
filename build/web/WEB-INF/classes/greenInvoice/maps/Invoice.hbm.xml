@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 19 Feb, 2019 9:57:46 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="greenInvoice.maps.Invoice" table="invoice" catalog="invinv" optimistic-lock="version">
+        <composite-id name="id" class="greenInvoice.maps.InvoiceId">
+            <key-property name="invNo" type="int">
+                <column name="invNo" />
+            </key-property>
+            <key-property name="vchno" type="string">
+                <column name="vchno" length="100" />
+            </key-property>
+        </composite-id>
+        <property name="doi" type="date">
+            <column name="doi" length="10" />
+        </property>
+        <property name="particulars" type="string">
+            <column name="particulars" length="300" />
+        </property>
+        <property name="dramt" type="java.lang.Double">
+            <column name="dramt" precision="10" />
+        </property>
+        <property name="cramt" type="java.lang.Double">
+            <column name="cramt" precision="10" />
+        </property>
+        <property name="paid" type="java.lang.Double">
+            <column name="paid" precision="10" />
+        </property>
+    </class>
+</hibernate-mapping>

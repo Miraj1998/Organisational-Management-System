@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 19 Feb, 2019 9:57:46 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="greenInvoice.maps.Instruments" table="instruments" catalog="invinv" optimistic-lock="version">
+        <id name="instrumentsId" type="java.lang.Integer">
+            <column name="instrumentsId" />
+            <generator class="identity" />
+        </id>
+        <property name="catNo" type="string">
+            <column name="CatNo" length="12" />
+        </property>
+        <property name="descGoods" type="string">
+            <column name="DescGoods" length="100" />
+        </property>
+        <property name="workingSize" type="string">
+            <column name="WorkingSize" length="12" />
+        </property>
+        <property name="moc" type="string">
+            <column name="MOC" length="12" />
+        </property>
+        <property name="gst" type="float">
+            <column name="gst" />
+        </property>
+        <property name="tempController" type="string">
+            <column name="TempController" length="12" />
+        </property>
+        <property name="rate" type="double">
+            <column name="Rate" not-null="true" />
+        </property>
+        <set name="vouchers" table="voucher" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="productid" not-null="true" />
+            </key>
+            <one-to-many class="greenInvoice.maps.Voucher" />
+        </set>
+    </class>
+</hibernate-mapping>
